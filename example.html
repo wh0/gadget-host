@@ -1,0 +1,13 @@
+<!doctype html>
+<script>if (window.location.pathname != '/ig/ifr') window.location.replace('http://www.gmodules.com/ig/ifr?url=http://wh0.github.io/gadget-host/gadget.xml&payload=' + encodeURIComponent(window.location.href)); else window.proxy = function (url) { return 'proxy?url=' + encodeURIComponent(url); };</script>
+<title>Example</title>
+<pre id="display">...</pre>
+<script>
+var xhr = new XMLHttpRequest();
+xhr.open('GET', proxy('http://httpbin.org/get'));
+xhr.responseType = 'text';
+xhr.addEventListener('load', function (e) {
+	document.getElementById('display').textContent = xhr.response;
+});
+xhr.send();
+</script>

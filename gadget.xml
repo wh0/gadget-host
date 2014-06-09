@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+	<ModulePrefs />
+	<Content type="html"><![CDATA[
+		<script>
+			var params = gadgets.util.getUrlParameters();
+			gadgets.io.makeRequest(params.payload, function (resp) {
+				document.open('text/html', 'replace');
+				document.write(resp.data);
+				document.close();
+			});
+		</script>
+	]]></Content>
+</Module>
